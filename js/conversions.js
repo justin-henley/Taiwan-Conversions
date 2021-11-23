@@ -46,3 +46,26 @@ export function convertMass(measure, fromUnit, toUnit) {
 
   return measure * massToKg[fromUnit] * (1.0 / massToKg[toUnit]);
 }
+
+export function convertLength(measure, fromUnit, toUnit) {
+  const lengthToMeters = {
+    // Taiwanese
+    fen: 1 / 330,
+    cun: 1 / 33,
+    chi: 10 / 33,
+    zhang: 100 / 33,
+
+    // Foreign
+    meter: 1,
+    inch: 0.0254,
+    foot: 0.3048,
+    yard: 0.9144,
+    mile: 1609.344,
+    km: 1000,
+  };
+
+  return measure * lengthToMeters[fromUnit] * (1.0 / lengthToMeters[toUnit]);
+}
+
+// prob only taiwanese to decimal notation, one-way
+export function convertNumbers(value, unit) {}

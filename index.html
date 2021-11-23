@@ -8,6 +8,33 @@
     <script src="./js/main.js" type="module"></script>
 </head>
 <body>
-    
+    <header>
+        <h1>Conversions</h1>
+    </header>
+    <main>
+        <section class="resultsSection">
+            <div class="conversionResult">
+                <!--Filled by JS-->
+            </div>
+        </section>
+        <section class="entrySection">
+            <form id="conversionForm" action="">
+                <div class="typeSelection">
+                    <label for="type">Measurement Type:</label>
+                    <select name="type" id="conversionType">
+                        <option value="length">Length</option>
+                        <option value="mass">Mass</option>
+                        <option value="area">Area</option>
+                    </select>
+                </div>
+                <div class="conversionEntry"></div>
+
+
+               <!--  <label for="sizePing">Ping ??</label>
+                <input type="number" min="0">
+                <button id="convert" class="button" title="Convert value">Go</button> -->
+            </form>
+        </section>
+    </main>
 </body>
 </html>

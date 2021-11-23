@@ -33,3 +33,4 @@ const testConvert = (measure, from, to) => {
 };
 
 testConvert(10, "ping", "sqfoot");
+console.log(Conversions.convertMass(13.227735731092654, "pound", "jin"));

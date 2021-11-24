@@ -13,19 +13,9 @@ document.addEventListener("readystatechange", (event) => {
 
 const initApp = () => {
   // Add listeners to type buttons
-  const areaRadio = document.getElementById("area");
-  areaRadio.addEventListener("change", (event) => {
-    typeHandler(event);
-  });
-
-  const lengthRadio = document.getElementById("length");
-  lengthRadio.addEventListener("change", (event) => {
-    typeHandler(event);
-  });
-
-  const massRadio = document.getElementById("mass");
-  massRadio.addEventListener("change", (event) => {
-    typeHandler(event);
+  const typeRadios = document.querySelectorAll(".unitRadio");
+  typeRadios.forEach((radio) => {
+    radio.addEventListener("change", typeHandler);
   });
 
   // TODO Add listeners to text fields for auto conversion
@@ -36,7 +26,7 @@ const initApp = () => {
   // TODO Add listeners to select elements to auto update conversions
 
   // TODO Find a way to make sure the page loads with a default type selected
-  areaRadio.checked = true;
+  //areaRadio.checked = true;
 };
 
 // Handles changes when a type is selected

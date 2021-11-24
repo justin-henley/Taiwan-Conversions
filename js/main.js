@@ -15,21 +15,25 @@ const initApp = () => {
   // Add listeners to type buttons
   const areaRadio = document.getElementById("area");
   areaRadio.addEventListener("change", (event) => {
-    console.log(event.target.value);
     typeHandler(event);
   });
 
   const lengthRadio = document.getElementById("length");
   lengthRadio.addEventListener("change", (event) => {
-    console.log(event.target.value);
     typeHandler(event);
   });
 
   const massRadio = document.getElementById("mass");
   massRadio.addEventListener("change", (event) => {
-    console.log(event.target.value);
     typeHandler(event);
   });
+
+  // TODO Add listeners to text fields for auto conversion
+  const textA = document.querySelector("#textA");
+
+  const textB = document.querySelector("#textB");
+
+  // TODO Add listeners to select elements to auto update conversions
 
   // TODO Find a way to make sure the page loads with a default type selected
   areaRadio.checked = true;

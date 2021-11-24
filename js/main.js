@@ -18,12 +18,11 @@ const initApp = () => {
     radio.addEventListener("change", typeHandler);
   });
 
-  // TODO Add listeners to text fields for auto conversion
-  const textA = document.querySelector("#textA");
-  textA.addEventListener("input", textInputHandler);
-
-  const textB = document.querySelector("#textB");
-  textB.addEventListener("input", textInputHandler);
+  // Add listeners to text fields for auto conversion
+  const textElems = document.querySelectorAll(".textEntry");
+  textElems.forEach((elem) => {
+    elem.addEventListener("input", textInputHandler);
+  });
 
   // TODO Add listeners to select elements to auto update conversions
 

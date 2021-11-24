@@ -1,4 +1,7 @@
 #typeField {
+  min-width: 200px;
+  max-width: 80vw;
+
   input[type="radio"] {
     appearance: none;
     // may need to change background color to remove gradient on old iOS
@@ -9,16 +12,18 @@
     min-width: 48px;
     min-height: 48px;
     border: 1px solid red;
-    //width: 200px;
+    width: 30%;
+    text-align: center;
   }
 
   label:hover {
-    background-color: red;
+    //background-color: $hover-type-color;
+    filter: brightness(75%);
   }
   .unchecked {
-    background-color: aqua;
+    background-color: $unchecked-type-color;
   }
   .checked {
-    background-color: blueviolet;
+    background-color: $checked-type-color;
   }
 }

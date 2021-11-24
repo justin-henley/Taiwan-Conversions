@@ -15,10 +15,10 @@
   label:hover {
     background-color: red;
   }
-  input[type="radio"]:focus {
-    appearance: auto;
-    label {
-      background-color: aqua;
-    }
+  .unchecked {
+    background-color: aqua;
+  }
+  .checked {
+    background-color: blueviolet;
   }
 }

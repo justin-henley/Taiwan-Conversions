@@ -6,7 +6,7 @@ export const conversionTypes = {
 };
 
 // All conversion values
-const conversionValues = {
+export const conversionValues = {
   // Conversions for area to square meters
   area: {
     // Taiwanese
@@ -54,8 +54,6 @@ const conversionValues = {
     metricTon: 1000,
   },
 };
-
-const areaToSqMeters = {};
 
 export const getTypeUnits = (type) => {
   let unitNames = [];

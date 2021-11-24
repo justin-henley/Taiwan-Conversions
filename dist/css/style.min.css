@@ -1,2 +1,2 @@
-#typeField input[type="radio"]{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0}#typeField label{display:inline-block;min-width:200px;min-height:48px;border:1px solid red;width:200px}
+#typeField input[type="radio"]{-webkit-appearance:none;-moz-appearance:none;appearance:none;margin:0}#typeField label{display:inline-block;min-width:200px;min-height:48px;border:1px solid red;width:200px}#typeField label:hover{background-color:red}#typeField input[type="radio"]:focus{-webkit-appearance:auto;-moz-appearance:auto;appearance:auto}#typeField input[type="radio"]:focus label{background-color:aqua}
 /*# sourceMappingURL=style.min.css.map */

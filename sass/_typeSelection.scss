@@ -11,4 +11,14 @@
     border: 1px solid red;
     width: 200px;
   }
+
+  label:hover {
+    background-color: red;
+  }
+  input[type="radio"]:focus {
+    appearance: auto;
+    label {
+      background-color: aqua;
+    }
+  }
 }

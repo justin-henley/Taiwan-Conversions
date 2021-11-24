@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taiwan Conversions</title>
     <script src="./js/main.js" type="module"></script>
+    <link rel="stylesheet" href="./dist/css/style.min.css">
 </head>
 <body>
     <header>
@@ -43,8 +44,10 @@
                     <legend>Units</legend>
                     <div class="typeSelection">
                         <!--buttons to select conversion type-->
-                        <input type="radio" name="unitType" id="area" value="area">
-                        <label for="area">Area</label>
+                        
+                        <label for="area">Area
+                            <input type="radio" name="unitType" id="area" value="area">
+                        </label>
                         <input type="radio" name="unitType" id="length" value="length">
                         <label for="length">Length</label>
                         <input type="radio" name="unitType" id="mass" value="mass">

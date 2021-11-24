@@ -25,6 +25,10 @@ const initApp = () => {
   });
 
   // TODO Add listeners to select elements to auto update conversions
+  const selectElems = document.querySelectorAll(".unitSelect");
+  selectElems.forEach((elem) => {
+    elem.addEventListener("input", selectInputHandler);
+  });
 
   // TODO Find a way to make sure the page loads with a default type selected
   //areaRadio.checked = true;
@@ -71,6 +75,49 @@ const textInputHandler = (event) => {
 
   // Get the unit to convert to
   const toUnit = outputSelectELem.value;
+
+  // Get the unit type
+  const unitType = document.querySelector(
+    'input[name="unitType"]:checked'
+  ).value;
+  console.log(unitType);
+
+  // Send conversion
+  const result = Conversions.convertMeasure(
+    measure,
+    fromUnit,
+    toUnit,
+    unitType
+  );
+
+  // Update other text field
+  outputTextElem.value = result;
+};
+
+// Event handler for select elements
+const selectInputHandler = (event) => {
+  // Bind all text and select elements
+  const inputSelectElem = event.target;
+  const outputSelectElem = document.getElementById(
+    inputSelectElem === "selectA" ? "selectB" : "selectA"
+  );
+  const inputTextElem = document.getElementById(
+    inputSelectElem === "selectA" ? "textA" : "textB"
+  );
+  const outputTextElem = document.getElementById(
+    inputSelectElem === "selectA" ? "textB" : "textA"
+  );
+
+  // Get the value of the text field
+  const measure = parseFloat(inputTextElem.value);
+  console.log(event.target.id, measure);
+
+  // Get this unit
+  const fromUnit = inputSelectElem.value;
+  console.log(fromUnit);
+
+  // Get the unit to convert to
+  const toUnit = outputSelectElem.value;
 
   // Get the unit type
   const unitType = document.querySelector(

@@ -16,19 +16,23 @@ document.addEventListener("readystatechange", (event) => {
 
 const initApp = () => {
   // Add listeners to type buttons
-  const areaButton = document.getElementById("buttonArea");
-
-  /* const conversionTypeSelect = document.getElementById("conversionType");
-  conversionTypeSelect.addEventListener("change", (event) => {
+  const areaRadio = document.getElementById("area");
+  areaRadio.addEventListener("change", (event) => {
     console.log(event.target.value);
-  }); */
+  });
 
-  /* // Add listener to convert button
-    const convertButton = document.getElementById('convert');
-    convertButton.addEventListener("submit", event => {
-        event.preventDefault();
-        processSubmission();
-    }) */
+  const lengthRadio = document.getElementById("length");
+  lengthRadio.addEventListener("change", (event) => {
+    console.log(event.target["value"]);
+  });
+
+  const massRadio = document.getElementById("mass");
+  massRadio.addEventListener("change", (event) => {
+    console.log(event.target["value"]);
+  });
+
+  // Find a way to make sure the page loads with a default type selected
+  areaRadio.checked = true;
 };
 
 const testConvert = (measure, from, to) => {

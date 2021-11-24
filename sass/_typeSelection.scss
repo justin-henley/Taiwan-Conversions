@@ -1,0 +1,14 @@
+#typeField {
+  input[type="radio"] {
+    appearance: none;
+    // may need to change background color to remove gradient on old iOS
+    margin: 0;
+  }
+  label {
+    display: inline-block;
+    min-width: 200px;
+    min-height: 48px;
+    border: 1px solid red;
+    width: 200px;
+  }
+}

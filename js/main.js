@@ -20,8 +20,10 @@ const initApp = () => {
 
   // TODO Add listeners to text fields for auto conversion
   const textA = document.querySelector("#textA");
+  textA.addEventListener("input", textInputHandler);
 
   const textB = document.querySelector("#textB");
+  textB.addEventListener("input", textInputHandler);
 
   // TODO Add listeners to select elements to auto update conversions
 
@@ -44,6 +46,49 @@ const typeHandler = (event) => {
 
   // Change form to new type
   EntryFields.resetFields(eventValue);
+};
+
+// Event listener for text fields
+const textInputHandler = (event) => {
+  // Bind all text and select elements
+  const inputTextElem = event.target;
+  const outputTextElem = document.getElementById(
+    inputTextElem.id === "textA" ? "textB" : "textA"
+  );
+  const inputSelectElem = document.getElementById(
+    inputTextElem.id === "textA" ? "selectA" : "selectB"
+  );
+  const outputSelectELem = document.getElementById(
+    inputTextElem.id === "textA" ? "selectB" : "selectA"
+  );
+
+  // Get the value of the text field
+  const measure = parseFloat(inputTextElem.value);
+  console.log(event.target.id, measure);
+
+  // Get this unit
+  const fromUnit = inputSelectElem.value;
+  console.log(fromUnit);
+
+  // Get the unit to convert to
+  const toUnit = outputSelectELem.value;
+
+  // Get the unit type
+  const unitType = document.querySelector(
+    'input[name="unitType"]:checked'
+  ).value;
+  console.log(unitType);
+
+  // Send conversion
+  const result = Conversions.convertMeasure(
+    measure,
+    fromUnit,
+    toUnit,
+    unitType
+  );
+
+  // Update other text field
+  outputTextElem.value = result;
 };
 
 // Tests

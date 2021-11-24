@@ -1,10 +1,10 @@
 import * as Conversions from "./conversions.js";
 
-Conversions.sayHello();
-
-const pingToSqMeter = (ping) => {
-  let sqmeter = (ping * 400.0) / 121.0;
-  return sqmeter;
+// Enum for conversion options
+const conversionTypes = {
+  AREA: "area",
+  LENGTH: "length",
+  MASS: "mass",
 };
 
 // Launch app
@@ -15,10 +15,13 @@ document.addEventListener("readystatechange", (event) => {
 });
 
 const initApp = () => {
-  const conversionTypeSelect = document.getElementById("conversionType");
+  // Add listeners to type buttons
+  const areaButton = document.getElementById("buttonArea");
+
+  /* const conversionTypeSelect = document.getElementById("conversionType");
   conversionTypeSelect.addEventListener("change", (event) => {
     console.log(event.target.value);
-  });
+  }); */
 
   /* // Add listener to convert button
     const convertButton = document.getElementById('convert');

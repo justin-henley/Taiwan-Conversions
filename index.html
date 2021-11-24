@@ -19,7 +19,38 @@
         </section>
         <section class="entrySection">
             <form id="conversionForm" action="">
-                <div class="typeSelection">
+                <fieldset>
+                    <legend>Convert from</legend>
+                    <div class="entry" id="entryA">
+                        <!--Left/top entry area, user entry-->
+                        <input type="text" id="textA" class="textEntry">
+                        <select name="selectA" id="selectA" class="unitSelect">
+                            <option value="none">none</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Convert to</legend>
+                    <div clas="entry" id="entryB">
+                        <!--Right/bottom entry area, results-->
+                        <input type="text" id="textB" class="textEntry">
+                        <select name="selectB" id="selectB" class="unitSelect">
+                            <option value="none">none</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Units</legend>
+                    <div class="typeSelection">
+                        <!--buttons to select conversion type-->
+                        <button id="buttonArea">Area</button>
+                        <button id="buttonLength">Length</button>
+                        <button id="buttonMass">Mass</button>
+                    </div>
+                </fieldset>
+                    
+                
+                <!-- <div class="typeSelection">
                     <label for="type">Measurement Type:</label>
                     <select name="type" id="conversionType">
                         <option value="length">Length</option>
@@ -27,7 +58,7 @@
                         <option value="area">Area</option>
                     </select>
                 </div>
-                <div class="conversionEntry"></div>
+                <div class="conversionEntry"></div> -->
 
 
                <!--  <label for="sizePing">Ping ??</label>

@@ -1,15 +1,14 @@
-export const sayHello = () => {
-  console.log("hello");
+// Enum for conversion options
+export const conversionTypes = {
+  AREA: "area",
+  LENGTH: "length",
+  MASS: "mass",
 };
 
-/** Converts a measure between two compatible units
- * @param {string} fromUnit - A name representing the unit to be converted from
- * @param {number} measure - The measure to be converted
- * @param {string} toUnit - A name representing the unit to be converted to
- * @return {number} - The measure converted to the chosen unit, or undefined
- */
-export const convertArea = (measure, fromUnit, toUnit) => {
-  const areaToSqMeters = {
+// All conversion values
+const conversionValues = {
+  // Conversions for area to square meters
+  area: {
     // Taiwanese
     ping: 400 / 121,
     mu: 12000 / 121,
@@ -21,13 +20,24 @@ export const convertArea = (measure, fromUnit, toUnit) => {
     sqfoot: 0.09290341,
     acre: 4046.873,
     hectare: 10000,
-  };
-
-  return measure * areaToSqMeters[fromUnit] * (1 / areaToSqMeters[toUnit]);
-};
-
-export function convertMass(measure, fromUnit, toUnit) {
-  const massToKg = {
+  },
+  // Conversions for length to meters
+  length: {
+    // Taiwanese
+    fen: 1 / 330,
+    cun: 1 / 33,
+    chi: 10 / 33,
+    zhang: 100 / 33,
+    // Foreign
+    meter: 1,
+    inch: 0.0254,
+    foot: 0.3048,
+    yard: 0.9144,
+    mile: 1609.344,
+    km: 1000,
+  },
+  // Conversions for mass to kilograms
+  mass: {
     // Taiwanese
     li: 3 / 80000,
     fen: 3 / 8000,
@@ -42,30 +52,52 @@ export function convertMass(measure, fromUnit, toUnit) {
     pound: 0.45359237,
     ton: 907.18474,
     metricTon: 1000,
-  };
+  },
+};
 
-  return measure * massToKg[fromUnit] * (1.0 / massToKg[toUnit]);
-}
+const areaToSqMeters = {};
 
-export function convertLength(measure, fromUnit, toUnit) {
-  const lengthToMeters = {
-    // Taiwanese
-    fen: 1 / 330,
-    cun: 1 / 33,
-    chi: 10 / 33,
-    zhang: 100 / 33,
+export const getTypeUnits = (type) => {
+  let unitNames = [];
+  switch (type) {
+    case conversionTypes.AREA:
+      unitNames = Object.keys(conversionValues.area);
+  }
 
-    // Foreign
-    meter: 1,
-    inch: 0.0254,
-    foot: 0.3048,
-    yard: 0.9144,
-    mile: 1609.344,
-    km: 1000,
-  };
+  return unitNames;
+};
 
-  return measure * lengthToMeters[fromUnit] * (1.0 / lengthToMeters[toUnit]);
+/* // ADT interface for unit conversions
+/**
+ *
+ * @param {number} measure - The measure value in fromUnits
+ * @param {string} fromUnit - The unit of the given measure
+ * @param {string} toUnit - The unit to convert the measure to
+ * @param {string} unitType - The type, which must be a member of the enum
+ * @returns {number} The measure after conversion to the toUnit
+ */
+export function convertMeasure(measure, fromUnit, toUnit, unitType) {
+  // Check all arguments provided
+  if (!measure || !fromUnit || !toUnit || !unitType) return undefined;
+
+  // Check unit type is a valid type
+  if (!conversionValues.hasOwnProperty(unitType)) return undefined;
+
+  // Check units are both from the unitType
+  if (
+    !conversionValues[unitType].hasOwnProperty(fromUnit) ||
+    !conversionValues[unitType].hasOwnProperty(toUnit)
+  )
+    return undefined;
+
+  // If all is valid, perform the conversion
+  return (
+    measure *
+    conversionValues[unitType][fromUnit] *
+    (1 / conversionValues[unitType][toUnit])
+  );
 }
 
 // prob only taiwanese to decimal notation, one-way
-export function convertNumbers(value, unit) {}
+// export function convertNumbers(value, unit) {}
+// TODO should be separate module

@@ -2,3 +2,15 @@
 $unchecked-type-color: red;
 $checked-type-color: blue;
 $hover-type-color: green;
+
+@mixin mq($size) {
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+body {
+  width: 80vw;
+  display: block;
+  margin: auto;
+}

@@ -34,11 +34,9 @@ export const textInputHandler = (event) => {
 
   // Get the value of the text field
   const measure = parseFloat(inputTextElem.value);
-  console.log(event.target.id, measure);
 
   // Get this unit
   const fromUnit = inputSelectElem.value;
-  console.log(fromUnit);
 
   // Get the unit to convert to
   const toUnit = outputSelectELem.value;
@@ -47,7 +45,6 @@ export const textInputHandler = (event) => {
   const unitType = document.querySelector(
     'input[name="unitType"]:checked'
   ).value;
-  console.log(unitType);
 
   // Send conversion
   const result = Conversions.convertMeasure(
@@ -77,11 +74,9 @@ export const selectInputHandler = (event) => {
 
   // Get the value of the text field
   const measure = parseFloat(inputTextElem.value);
-  console.log(event.target.id, measure);
 
   // Get this unit
   const fromUnit = inputSelectElem.value;
-  console.log(fromUnit);
 
   // Get the unit to convert to
   const toUnit = outputSelectElem.value;
@@ -90,7 +85,6 @@ export const selectInputHandler = (event) => {
   const unitType = document.querySelector(
     'input[name="unitType"]:checked'
   ).value;
-  console.log(unitType);
 
   // Send conversion
   const result = Conversions.convertMeasure(

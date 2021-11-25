@@ -37,13 +37,3 @@ const initApp = () => {
   const initTypeEvent = new Event("change");
   document.getElementById("mass").dispatchEvent(initTypeEvent);
 };
-
-// Tests
-const testConvert = (measure, from, to, type) => {
-  console.log(Conversions.convertMeasure(measure, from, to, type));
-};
-
-testConvert(10, "ping", "sqfoot", "area");
-testConvert(13.227735731092654, "pound", "jin", "mass");
-
-console.log(Conversions.getTypeUnits("area"));

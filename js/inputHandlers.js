@@ -12,7 +12,6 @@ export const typeHandler = (event) => {
     label.classList.remove("checked");
   });
   const typeLabel = document.getElementById(`${eventValue}Label`);
-  typeLabel.classList.remove("unchecked"); // TODO this has no effect??
   typeLabel.classList.add("checked");
 
   // Change form to new type

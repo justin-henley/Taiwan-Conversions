@@ -97,15 +97,15 @@ const textInputHandler = (event) => {
 // Event handler for select elements
 const selectInputHandler = (event) => {
   // Bind all text and select elements
-  const inputSelectElem = event.target;
+  const inputSelectElem = document.getElementById("selectA"); //event.target;
   const outputSelectElem = document.getElementById(
-    inputSelectElem === "selectA" ? "selectB" : "selectA"
+    "selectB" //inputSelectElem === "selectA" ? "selectB" : "selectA"
   );
   const inputTextElem = document.getElementById(
-    inputSelectElem === "selectA" ? "textA" : "textB"
+    "textA" //inputSelectElem === "selectA" ? "textA" : "textB"
   );
   const outputTextElem = document.getElementById(
-    outputSelectElem === "selectA" ? "textB" : "textA"
+    "textB" //outputSelectElem === "selectA" ? "textB" : "textA"
   );
 
   // Get the value of the text field

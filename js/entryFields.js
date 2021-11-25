@@ -36,7 +36,7 @@ const generateOptionsFrag = (type) => {
 const clearTextFields = () => {
   const textFields = document.querySelectorAll(".textEntry");
   textFields.forEach((field) => {
-    field.value = "";
+    field.value = "0";
   });
 };
 

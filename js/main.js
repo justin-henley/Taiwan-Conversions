@@ -91,7 +91,7 @@ const textInputHandler = (event) => {
   );
 
   // Update other text field
-  outputTextElem.value = result;
+  outputTextElem.value = result === undefined ? 0 : result;
 };
 
 // Event handler for select elements
@@ -105,7 +105,7 @@ const selectInputHandler = (event) => {
     inputSelectElem === "selectA" ? "textA" : "textB"
   );
   const outputTextElem = document.getElementById(
-    inputSelectElem === "selectA" ? "textB" : "textA"
+    outputSelectElem === "selectA" ? "textB" : "textA"
   );
 
   // Get the value of the text field
@@ -134,7 +134,7 @@ const selectInputHandler = (event) => {
   );
 
   // Update other text field
-  outputTextElem.value = result;
+  outputTextElem.value = result === undefined ? 0 : result;
 };
 
 // Tests

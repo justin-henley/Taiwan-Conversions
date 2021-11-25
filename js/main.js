@@ -24,14 +24,14 @@ const initApp = () => {
     elem.addEventListener("input", textInputHandler);
   });
 
-  // TODO Add listeners to select elements to auto update conversions
+  // Add listeners to select elements to auto update conversions
   const selectElems = document.querySelectorAll(".unitSelect");
   selectElems.forEach((elem) => {
     elem.addEventListener("input", selectInputHandler);
   });
 
   // TODO Find a way to make sure the page loads with a default type selected
-  //areaRadio.checked = true;
+  document.getElementById("area");
 };
 
 // Handles changes when a type is selected
@@ -45,6 +45,7 @@ const typeHandler = (event) => {
     label.classList.remove("checked");
   });
   const typeLabel = document.getElementById(`${eventValue}Label`);
+  typeLabel.classList.remove("unchecked"); // TODO this has no effect??
   typeLabel.classList.add("checked");
 
   // Change form to new type

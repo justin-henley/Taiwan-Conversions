@@ -1,5 +1,6 @@
 import * as Conversions from "./conversions.js";
 import * as EntryFields from "./entryFields.js";
+import * as InputHandlers from "./inputHandlers.js";
 
 // The current type and conversion function
 let currentType = Conversions.conversionTypes.AREA;
@@ -15,127 +16,23 @@ const initApp = () => {
   // Add listeners to type buttons
   const typeRadios = document.querySelectorAll(".unitRadio");
   typeRadios.forEach((radio) => {
-    radio.addEventListener("change", typeHandler);
+    radio.addEventListener("change", InputHandlers.typeHandler);
   });
 
   // Add listeners to text fields for auto conversion
   const textElems = document.querySelectorAll(".textEntry");
   textElems.forEach((elem) => {
-    elem.addEventListener("input", textInputHandler);
+    elem.addEventListener("input", InputHandlers.textInputHandler);
   });
 
   // Add listeners to select elements to auto update conversions
   const selectElems = document.querySelectorAll(".unitSelect");
   selectElems.forEach((elem) => {
-    elem.addEventListener("input", selectInputHandler);
+    elem.addEventListener("input", InputHandlers.selectInputHandler);
   });
 
   // TODO Find a way to make sure the page loads with a default type selected
   document.getElementById("area");
-};
-
-// Handles changes when a type is selected
-const typeHandler = (event) => {
-  const eventValue = event.target.value;
-
-  // style labels
-  // TODO prob factor out
-  const allTypeLabels = document.querySelectorAll(".typeSelection label");
-  allTypeLabels.forEach((label) => {
-    label.classList.remove("checked");
-  });
-  const typeLabel = document.getElementById(`${eventValue}Label`);
-  typeLabel.classList.remove("unchecked"); // TODO this has no effect??
-  typeLabel.classList.add("checked");
-
-  // Change form to new type
-  EntryFields.resetFields(eventValue);
-};
-
-// Event listener for text fields
-const textInputHandler = (event) => {
-  // Bind all text and select elements
-  const inputTextElem = event.target;
-  const outputTextElem = document.getElementById(
-    inputTextElem.id === "textA" ? "textB" : "textA"
-  );
-  const inputSelectElem = document.getElementById(
-    inputTextElem.id === "textA" ? "selectA" : "selectB"
-  );
-  const outputSelectELem = document.getElementById(
-    inputTextElem.id === "textA" ? "selectB" : "selectA"
-  );
-
-  // Get the value of the text field
-  const measure = parseFloat(inputTextElem.value);
-  console.log(event.target.id, measure);
-
-  // Get this unit
-  const fromUnit = inputSelectElem.value;
-  console.log(fromUnit);
-
-  // Get the unit to convert to
-  const toUnit = outputSelectELem.value;
-
-  // Get the unit type
-  const unitType = document.querySelector(
-    'input[name="unitType"]:checked'
-  ).value;
-  console.log(unitType);
-
-  // Send conversion
-  const result = Conversions.convertMeasure(
-    measure,
-    fromUnit,
-    toUnit,
-    unitType
-  );
-
-  // Update other text field
-  outputTextElem.value = result === undefined ? 0 : result;
-};
-
-// Event handler for select elements
-const selectInputHandler = (event) => {
-  // Bind all text and select elements
-  const inputSelectElem = document.getElementById("selectA"); //event.target;
-  const outputSelectElem = document.getElementById(
-    "selectB" //inputSelectElem === "selectA" ? "selectB" : "selectA"
-  );
-  const inputTextElem = document.getElementById(
-    "textA" //inputSelectElem === "selectA" ? "textA" : "textB"
-  );
-  const outputTextElem = document.getElementById(
-    "textB" //outputSelectElem === "selectA" ? "textB" : "textA"
-  );
-
-  // Get the value of the text field
-  const measure = parseFloat(inputTextElem.value);
-  console.log(event.target.id, measure);
-
-  // Get this unit
-  const fromUnit = inputSelectElem.value;
-  console.log(fromUnit);
-
-  // Get the unit to convert to
-  const toUnit = outputSelectElem.value;
-
-  // Get the unit type
-  const unitType = document.querySelector(
-    'input[name="unitType"]:checked'
-  ).value;
-  console.log(unitType);
-
-  // Send conversion
-  const result = Conversions.convertMeasure(
-    measure,
-    fromUnit,
-    toUnit,
-    unitType
-  );
-
-  // Update other text field
-  outputTextElem.value = result === undefined ? 0 : result;
 };
 
 // Tests

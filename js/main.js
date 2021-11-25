@@ -31,8 +31,11 @@ const initApp = () => {
     elem.addEventListener("input", InputHandlers.selectInputHandler);
   });
 
-  // TODO Find a way to make sure the page loads with a default type selected
-  document.getElementById("area");
+  // Load page with a default type selected
+
+  // Create a new change event for type label
+  const initTypeEvent = new Event("change");
+  document.getElementById("area").dispatchEvent(initTypeEvent);
 };
 
 // Tests

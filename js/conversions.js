@@ -5,6 +5,10 @@ export const conversionTypes = {
   MASS: "mass",
 };
 
+// Note to self: For history to work, you can't use live update, or every keystroke is a "new" conversion
+// Stores conversion history as object array
+// export let conversionHistory = [];
+
 // All conversion values
 // TODO find a way to manage the floating point imprecision
 export const conversionValues = {
@@ -90,11 +94,20 @@ export function convertMeasure(measure, fromUnit, toUnit, unitType) {
     return undefined;
 
   // If all is valid, perform the conversion
-  return (
+  const convertedMeasure =
     measure *
     conversionValues[unitType][fromUnit] *
-    (1 / conversionValues[unitType][toUnit])
-  );
+    (1 / conversionValues[unitType][toUnit]);
+
+  /* // Update conversion history
+  conversionHistory.unshift({
+    measure,
+    fromUnit,
+    convertedMeasure,
+    toUnit,
+  });
+  console.log(conversionHistory); */
+  return convertedMeasure;
 }
 
 // prob only taiwanese to decimal notation, one-way

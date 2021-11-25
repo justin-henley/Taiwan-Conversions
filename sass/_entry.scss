@@ -1,0 +1,18 @@
+.unitSelect {
+  text-align: center;
+  background-color: $select-menu-color;
+  border: none;
+}
+
+.textEntry {
+  text-align: center;
+  color: $text-entry-color;
+  border: none;
+}
+
+fieldset {
+  //border: none;
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+}

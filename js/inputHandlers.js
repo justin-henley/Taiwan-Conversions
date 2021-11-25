@@ -1,4 +1,5 @@
 import * as EntryFields from "./entryFields.js";
+import * as Conversions from "./conversions.js";
 
 // Handles changes when a type is selected
 export const typeHandler = (event) => {

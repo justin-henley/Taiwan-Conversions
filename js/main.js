@@ -35,7 +35,7 @@ const initApp = () => {
 
   // Create a new change event for type label
   const initTypeEvent = new Event("change");
-  document.getElementById("area").dispatchEvent(initTypeEvent);
+  document.getElementById("mass").dispatchEvent(initTypeEvent);
 };
 
 // Tests

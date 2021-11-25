@@ -1,5 +1,5 @@
 import * as Conversions from "./conversions.js";
-import * as EntryFields from "./entryFields.js";
+//import * as EntryFields from "./entryFields.js";
 import * as InputHandlers from "./inputHandlers.js";
 
 // The current type and conversion function

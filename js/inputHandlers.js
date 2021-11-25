@@ -7,7 +7,7 @@ export const typeHandler = (event) => {
 
   // style labels
   // TODO prob factor out
-  const allTypeLabels = document.querySelectorAll(".typeSelection label");
+  const allTypeLabels = document.querySelectorAll("#typeField label");
   allTypeLabels.forEach((label) => {
     label.classList.remove("checked");
   });

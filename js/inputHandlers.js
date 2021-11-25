@@ -1,3 +1,5 @@
+import * as EntryFields from "./entryFields.js";
+
 // Handles changes when a type is selected
 export const typeHandler = (event) => {
   const eventValue = event.target.value;

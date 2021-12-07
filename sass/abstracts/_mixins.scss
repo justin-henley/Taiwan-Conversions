@@ -3,3 +3,15 @@
     @content;
   }
 }
+
+@mixin mqh($size) {
+  @media only screen and (minheight: $size) {
+    @content;
+  }
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

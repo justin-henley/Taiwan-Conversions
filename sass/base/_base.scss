@@ -18,11 +18,13 @@ html {
 }
 
 body {
-  width: 100%;
-  min-height: 100%;
-  @include flexCenter;
-  flex-direction: column;
-  padding: 0.5rem;
+  width: 100vw;
+  min-height: 100vh;
+  @include mq(768px) {
+    @include flexCenter;
+    flex-direction: column;
+  }
+  padding: 0.5em;
 }
 
 main {

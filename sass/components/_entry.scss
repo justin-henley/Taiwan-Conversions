@@ -36,4 +36,9 @@
 }
 
 @include mq(768px) {
+  #conversionForm {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }

@@ -24,7 +24,14 @@ body {
     @include flexCenter;
     flex-direction: column;
   }
+  @include flexCenter;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 0.5em;
+}
+
+header {
+  padding: 1rem;
 }
 
 main {

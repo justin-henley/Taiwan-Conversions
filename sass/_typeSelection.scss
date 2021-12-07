@@ -1,6 +1,7 @@
 #typeField {
   min-width: 200px;
   max-width: 80vw;
+  display: flex;
 
   input[type="radio"] {
     appearance: none;

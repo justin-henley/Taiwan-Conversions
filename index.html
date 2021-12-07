@@ -13,71 +13,73 @@
       <h1>Conversions</h1>
     </header>
     <main>
-      <section class="entrySection">
-        <form id="conversionForm" action="">
-          <fieldset class="entryField" id="entryFieldA">
-            <legend>Convert from</legend>
-            <!-- <div class="entry" id="entryA"> -->
-            <!--Left/top entry area, user entry-->
-            <input type="text" id="textA" class="textEntry" />
-            <select name="selectA" id="selectA" class="unitSelect">
-              <option value="none">none</option>
-            </select>
-            <!-- </div> -->
-          </fieldset>
-          <fieldset class="entryField" id="entryFieldB">
-            <legend>Convert to</legend>
-            <!-- <div clas="entry" id="entryB"> -->
-            <!--Right/bottom entry area, results-->
-            <input type="text" id="textB" class="textEntry" readonly />
-            <select name="selectB" id="selectB" class="unitSelect">
-              <option value="none">none</option>
-            </select>
-            <!-- </div> -->
-          </fieldset>
-        </form>
-      </section>
-      <section class="typeButtons">
-        <form id="typeForm" action="">
-          <fieldset class="entryField" id="typeField">
-            <legend>Units</legend>
-            <!-- <div class="typeSelection"> -->
-            <!--buttons to select conversion type-->
+      <article>
+        <section class="entrySection">
+          <form id="conversionForm" action="">
+            <fieldset class="entryField" id="entryFieldA">
+              <legend>Convert from</legend>
+              <!-- <div class="entry" id="entryA"> -->
+              <!--Left/top entry area, user entry-->
+              <input type="text" id="textA" class="textEntry" />
+              <select name="selectA" id="selectA" class="unitSelect">
+                <option value="none">none</option>
+              </select>
+              <!-- </div> -->
+            </fieldset>
+            <fieldset class="entryField" id="entryFieldB">
+              <legend>Convert to</legend>
+              <!-- <div clas="entry" id="entryB"> -->
+              <!--Right/bottom entry area, results-->
+              <input type="text" id="textB" class="textEntry" readonly />
+              <select name="selectB" id="selectB" class="unitSelect">
+                <option value="none">none</option>
+              </select>
+              <!-- </div> -->
+            </fieldset>
+          </form>
+        </section>
+        <section class="typeButtons">
+          <form id="typeForm" action="">
+            <fieldset class="entryField" id="typeField">
+              <legend>Units</legend>
+              <!-- <div class="typeSelection"> -->
+              <!--buttons to select conversion type-->
 
-            <label for="area" id="areaLabel" class="unitTypeLabel"
-              >Area
-              <input
-                type="radio"
-                name="unitType"
-                id="area"
-                class="unitRadio"
-                value="area"
-              />
-            </label>
-            <label for="length" id="lengthLabel" class="unitTypeLabel"
-              >Length
-              <input
-                type="radio"
-                name="unitType"
-                id="length"
-                class="unitRadio"
-                value="length"
-              />
-            </label>
-            <label for="mass" id="massLabel" class="unitTypeLabel"
-              >Mass
-              <input
-                type="radio"
-                name="unitType"
-                id="mass"
-                class="unitRadio"
-                value="mass"
-              />
-            </label>
-            <!-- </div> -->
-          </fieldset>
-        </form>
-      </section>
+              <label for="area" id="areaLabel" class="unitTypeLabel"
+                >Area
+                <input
+                  type="radio"
+                  name="unitType"
+                  id="area"
+                  class="unitRadio"
+                  value="area"
+                />
+              </label>
+              <label for="length" id="lengthLabel" class="unitTypeLabel"
+                >Length
+                <input
+                  type="radio"
+                  name="unitType"
+                  id="length"
+                  class="unitRadio"
+                  value="length"
+                />
+              </label>
+              <label for="mass" id="massLabel" class="unitTypeLabel"
+                >Mass
+                <input
+                  type="radio"
+                  name="unitType"
+                  id="mass"
+                  class="unitRadio"
+                  value="mass"
+                />
+              </label>
+              <!-- </div> -->
+            </fieldset>
+          </form>
+        </section>
+      </article>
     </main>
   </body>
 </html>

@@ -11,6 +11,7 @@
 .textEntry {
   text-align: center;
   color: $entry-text-color;
+  background-color: $entry-background-color;
   border: none;
   height: 100%;
   width: 70%;
@@ -32,4 +33,7 @@
 
 .entryField legend {
   font-size: 1.5rem;
+}
+
+@include mq(768px) {
 }

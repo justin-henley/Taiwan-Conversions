@@ -10,11 +10,28 @@ html {
   background-color: $page-background-color;
   color: $font-color;
   font-family: $font-stack;
-  font-size: 20px;
+  font-size: 16px;
+  // For larger screens, changing here helps set rem units
+  @include mq(768) {
+    font-size: 22px;
+  }
 }
 
 body {
-  width: 80vw;
-  display: block;
-  margin: auto;
+  width: 100%;
+  min-height: 100%;
+  @include flexCenter;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  /*   background-color: $mask-color;
+  border: 1px dolid $border-color;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2.5px $shadow-color; */
 }

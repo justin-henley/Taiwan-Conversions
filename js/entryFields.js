@@ -18,6 +18,15 @@ export const resetFields = (type) => {
  */
 const generateOptionsFrag = (type) => {
   const selectOptions = document.createDocumentFragment();
+  // Set a default instruction option
+  const defaultOption = document.createElement("option");
+  defaultOption.value = "";
+  defaultOption.disabled = true;
+  defaultOption.selected = true;
+  defaultOption.text = "Select an option";
+  selectOptions.append(defaultOption);
+
+  // Generate all options for given unit
   const units = Object.keys(Conversions.conversionValues[type]);
   units.forEach((unit) => {
     // Create and fill in new option element

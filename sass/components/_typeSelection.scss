@@ -1,6 +1,7 @@
 #typeField {
   display: flex;
   border-radius: 10px;
+  border: none;
 
   input[type="radio"] {
     appearance: none;
@@ -20,6 +21,10 @@
     margin: 5px;
     text-align: center;
     font-size: 5vmin;
+  }
+
+  legend {
+    font-size: 1.5rem;
   }
 
   label:hover {

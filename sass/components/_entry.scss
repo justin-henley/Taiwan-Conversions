@@ -35,10 +35,26 @@
   font-size: 1.5rem;
 }
 
+#equalsSign {
+  display: none;
+}
+
 @include mq(768px) {
   #conversionForm {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+  }
+
+  .entryField {
+    margin-top: 1rem;
+    legend {
+      display: none;
+    }
+  }
+
+  #equalsSign {
+    display: inline;
+    margin: auto;
   }
 }

@@ -10,9 +10,10 @@
   border: none;
 }
 
-fieldset {
+/* fieldset {
   //border: none;
   display: flex;
   justify-content: space-around;
-  flex-grow: 1;
-}
+  //flex-grow: 1;
+  flex-wrap: wrap;
+} */

@@ -1,6 +1,4 @@
 #typeField {
-  min-width: 200px;
-  max-width: 80vw;
   display: flex;
 
   input[type="radio"] {
@@ -9,13 +7,18 @@
     margin: 0;
   }
   label {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     min-width: 48px;
     min-height: 48px;
     //border: 1px solid red;
     width: 100%;
     border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
     text-align: center;
+    font-size: 5vmin;
   }
 
   label:hover {

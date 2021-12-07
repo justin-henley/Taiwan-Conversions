@@ -1,0 +1,40 @@
+// Page reset
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+// Set values for whole document
+html {
+  background-color: $page-background-color;
+  color: $font-color;
+  font-family: $font-stack;
+  font-size: 16px;
+  // For larger screens, changing here helps set rem units
+  @include mq(768) {
+    font-size: 22px;
+  }
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  @include mq(768px) {
+    @include flexCenter;
+    flex-direction: column;
+  }
+  padding: 0.5em;
+}
+
+main {
+  width: 100%;
+  max-width: 700px;
+
+  //display: flex;
+  //flex-direction: column;
+  /*   background-color: $mask-color;
+  border: 1px dolid $border-color;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2.5px $shadow-color; */
+}
